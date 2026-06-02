@@ -1,0 +1,25 @@
+.form-processing-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 82vh;
+  text-align: center;
+  background-color: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.processing-container {
+  background-color: none;
+  border-radius: 12px;
+  max-width: 40%;
+  padding-bottom: 3rem;
+}
+
+.processing-container h2 {
+  color: #EF4524;
+}
+
+.processing-container p {
+  font-size: 1.1rem;
+  color: #000000;
+}

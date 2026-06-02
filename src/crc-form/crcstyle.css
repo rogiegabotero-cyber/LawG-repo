@@ -1,0 +1,353 @@
+.claim-form-page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: left;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.claim-form-page h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #EF4524;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.intro-text {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-size: 14px;
+  border-left: 4px solid #EF4524;
+}
+
+.intro-text p {
+  margin: 0;
+}
+
+.claim-form-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.claim-form-page h3 {
+  color: #EF4524;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #EF4524;
+  padding-bottom: 8px;
+}
+
+.contact-fields {
+  max-height: 2000px; /* large enough to fit all fields */
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  opacity: 1;
+}
+
+.contact-fields span{
+  margin-top: 1rem;
+}
+
+.contact-fields.slide-up {
+  max-height: 0;
+  opacity: 0;
+}
+
+
+/* Row layouts for names and addresses */
+.name-row {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 2fr 1fr;
+  gap: 12px;
+}
+
+.address-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 12px;
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.dob-gender-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Label styling */
+.claim-form-page label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.claim-form-page label span {
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Fieldset styling */
+fieldset {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fafafa;
+}
+
+legend {
+  font-weight: bold;
+  margin-bottom: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #333;
+  padding: 0 10px;
+}
+
+/* Checkbox grid layout */
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.checkbox-item {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.checkbox-item:hover {
+  background-color: #f0f0f0;
+}
+
+.checkbox-item input[type="checkbox"] {
+  min-width: 18px;
+  height: 18px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.checkbox-item span {
+  font-weight: normal !important;
+  font-size: 14px;
+}
+
+
+/* Input, textarea, select styling */
+.claim-form-page input,
+.claim-form-page textarea,
+.claim-form-page select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  transition: border-color 0.2s;
+  color: #333;
+  background-color: white;
+}
+
+.claim-form-page textarea{
+  width: 97%;
+  max-width: 97%;
+}
+
+.claim-form-page input:focus,
+.claim-form-page textarea:focus,
+.claim-form-page select:focus {
+  outline: none;
+  border-color: #EF4524;
+  box-shadow: 0 0 0 2px rgba(239, 69, 36, 0.1);
+}
+
+.claim-form-page textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.5;
+}
+
+.claim-form-page select {
+  cursor: pointer;
+}
+
+/* Disclaimer section */
+.disclaimer-section {
+  background: #fff8f6;
+  border: 2px solid #EF4524;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.disclaimer-label {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.disclaimer-label input[type="checkbox"] {
+  margin-top: 4px;
+  min-width: 20px;
+  min-height: 20px;
+  cursor: pointer;
+}
+
+.disclaimer-label span {
+  line-height: 1.6;
+  font-size: 14px;
+  font-weight: normal !important;
+  color: #333;
+}
+
+/* Button styling */
+.claim-form-page button {
+  background-color: #EF4524;
+  color: white;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.email-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.email-popup {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  height: 50%;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.email-popup input {
+  padding: 10px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #818181;
+  font-size: 16px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.email-popup label {
+  text-align: left;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#cancel_btn{
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  margin: 1rem;
+  background-color: #525252;
+  border: solid 1px #525252;
+}
+#proceed_btn{
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  margin: 1rem;
+  border: solid 1px #EF4524;
+}
+
+#cancel_btn:hover {
+  background-color: #ffffff;
+  color: #525252;
+  border: solid 1px #525252;
+}
+
+#proceed_btn:hover {
+  background-color: #f0f0f0;
+  color: #EF4524;
+  border: solid 1px #EF4524;
+}
+
+.claim-form-page button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+
+@media (max-width: 768px) {
+  .name-row,
+  .address-row,
+  .contact-row,
+  .dob-gender-row {
+    grid-template-columns: 1fr;
+  }
+
+  .claim-form-page textarea{
+    width: 92%;
+  }
+
+  .email-popup{
+    margin: 1rem;
+  }
+
+}

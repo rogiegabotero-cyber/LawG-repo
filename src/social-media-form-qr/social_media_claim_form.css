@@ -1,0 +1,509 @@
+.social-media-claim-page {
+  width: min(100%, 900px);
+  margin: 30px auto 60px;
+  padding: clamp(14px, 2.8vw, 30px);
+  box-sizing: border-box;
+  overflow-x: clip;
+  color: #111827;
+}
+
+.social-media-claim-page * {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.social-media-claim-page h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.social-media-claim-page h3 {
+  margin: 22px 0 12px;
+  font-size: 1.05rem;
+  color: #ef4524;
+  overflow-wrap: anywhere;
+}
+
+.social-form-intro {
+  margin: 0 0 18px;
+  color: #4b5563;
+  line-height: 1.65;
+}
+
+.social-media-claim-page fieldset {
+  margin: 0;
+  padding: clamp(12px, 2.2vw, 20px);
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.social-media-claim-page legend,
+.social-media-claim-page label span {
+  overflow-wrap: anywhere;
+}
+
+.social-media-claim-page legend {
+  padding: 0 8px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.contact-fields,
+.contact-row {
+  display: grid;
+  gap: 14px;
+}
+
+.contact-row {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.social-sign-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.social-media-claim-page label {
+  display: grid;
+  gap: 8px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.social-media-claim-page label span {
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.social-media-claim-page input[type="text"],
+.social-media-claim-page input[type="email"],
+.social-media-claim-page input[type="tel"],
+.social-media-claim-page input[type="number"],
+.social-media-claim-page input[type="date"],
+.social-media-claim-page textarea,
+.social-media-claim-page select {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #fff;
+  padding: 12px 14px;
+  font-size: 15px;
+  color: #111827;
+  box-shadow: inset 0 1px 2px rgba(17, 24, 39, 0.05);
+}
+
+.social-media-claim-page textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 110px;
+  resize: vertical;
+}
+
+.social-media-claim-page input:focus,
+.social-media-claim-page textarea:focus,
+.social-media-claim-page select:focus {
+  outline: none;
+  border-color: #ef4524;
+  box-shadow: 0 0 0 4px rgba(239, 69, 36, 0.12);
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.platform-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 16px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  background: #fff;
+  font-weight: 500;
+  color: #111827;
+}
+
+.checkbox-item input[type="checkbox"],
+.checkbox-item input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: #ef4524;
+}
+
+.platform-pill {
+  background: linear-gradient(180deg, #fff, #fff8f6);
+}
+
+.social-injury-group {
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.social-injury-group h4 {
+  margin: 0 0 12px;
+  color: #ef4524;
+  font-size: 15px;
+}
+
+.social-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.social-card-grid-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.social-card-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.signature-top-wrap {
+  margin-bottom: 22px;
+}
+
+.signature-grid-head {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 0 10px;
+  text-align: center;
+  font-size: clamp(1.25rem, 2.2vw, 2rem);
+  letter-spacing: 0.02em;
+}
+
+.signature-grid-table {
+  border: 2px solid #111827;
+}
+
+.signature-grid-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.signature-grid-row + .signature-grid-row {
+  border-top: 1px solid #111827;
+}
+
+.signature-grid-cell {
+  padding: 10px 10px 12px;
+  background: #fff;
+}
+
+.signature-grid-cell + .signature-grid-cell {
+  border-left: 1px solid #111827;
+}
+
+.signature-grid-cell label {
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.signature-grid-cell label span {
+  font-size: 15px;
+}
+
+.authorized-rep-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 155px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.authorized-rep-split:focus-within {
+  border-color: #ef4524;
+  box-shadow: 0 0 0 4px rgba(239, 69, 36, 0.12);
+}
+
+.authorized-rep-split input,
+.authorized-rep-split select {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin: 0;
+}
+
+.authorized-rep-split input:focus,
+.authorized-rep-split select:focus {
+  outline: none;
+}
+
+.authorized-rep-split select {
+  border-left: 2px solid #111827 !important;
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #111827 50%),
+    linear-gradient(135deg, #111827 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) calc(50% - 2px),
+    calc(100% - 14px) calc(50% - 2px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 36px;
+}
+
+.signature-grid-static-text {
+  display: flex;
+  align-items: center;
+  font-family: "Times New Roman", serif;
+  font-size: clamp(1.1rem, 1.8vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.signature-grid-empty {
+  min-height: 76px;
+}
+
+.signature-date-block {
+  display: grid;
+  gap: 10px;
+}
+
+.signature-date-label {
+  font-size: 15px;
+  line-height: 1.45;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.signature-inline-date-inputs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.disclaimer-section {
+  margin-top: 22px;
+  padding: 16px;
+  border: 1px solid #f0d1c9;
+  border-radius: 14px;
+  background: #fff7f4;
+}
+
+.disclaimer-label {
+  display: flex !important;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.disclaimer-label input[type="checkbox"] {
+  margin-top: 3px;
+  accent-color: #ef4524;
+}
+
+.social-submit-btn {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  border: 1px solid #ef4524;
+  border-radius: 12px;
+  padding: 14px 18px;
+  background: #ef4524;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.social-submit-btn:hover {
+  background: #fff;
+  color: #ef4524;
+}
+
+.social-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.social-email-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(15, 23, 42, 0.58);
+}
+
+.social-email-modal {
+  width: min(100%, 520px);
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 20px 46px rgba(2, 6, 23, 0.22);
+}
+
+.social-email-modal h4 {
+  margin: 0 0 8px;
+  font-size: 1.12rem;
+  color: #111827;
+}
+
+.social-email-modal p {
+  margin: 0 0 14px;
+  color: #4b5563;
+  line-height: 1.55;
+}
+
+.social-email-modal-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.social-email-modal-cancel,
+.social-email-modal-submit {
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.social-email-modal-cancel {
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: #1f2937;
+}
+
+.social-email-modal-cancel:hover {
+  background: #f9fafb;
+}
+
+.social-email-modal-submit {
+  border: 1px solid #ef4524;
+  background: #ef4524;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.social-email-modal-submit:hover {
+  background: #fff;
+  color: #ef4524;
+}
+
+.social-email-modal-cancel:disabled,
+.social-email-modal-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1024px) {
+  .social-media-claim-page {
+    margin-bottom: 44px;
+  }
+
+  .contact-row,
+  .social-sign-row,
+  .social-card-grid,
+  .social-card-grid-two,
+  .social-card-grid-three {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .social-media-claim-page {
+    width: calc(100% - 20px);
+    margin-top: 16px;
+    margin-bottom: 36px;
+    padding: 12px;
+  }
+
+  .checkbox-grid,
+  .platform-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .checkbox-item {
+    padding: 10px 12px;
+  }
+
+  .social-injury-group {
+    padding: 14px;
+  }
+
+  .signature-grid-head,
+  .signature-grid-row,
+  .signature-inline-date-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .authorized-rep-split {
+    grid-template-columns: 1fr;
+  }
+
+  .authorized-rep-split select {
+    border-left: none !important;
+    border-top: 1px solid #d1d5db !important;
+  }
+
+  .signature-grid-cell + .signature-grid-cell {
+    border-left: none;
+    border-top: 1px solid #111827;
+  }
+}
+
+@media (max-width: 560px) {
+  .social-media-claim-page fieldset,
+  .social-injury-group,
+  .disclaimer-section {
+    padding: 12px;
+  }
+
+  .social-submit-btn {
+    padding: 13px 16px;
+  }
+
+  .social-email-modal {
+    padding: 16px;
+  }
+
+  .social-email-modal-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+}

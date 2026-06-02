@@ -1,0 +1,101 @@
+.practice_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    padding: 5% 8%;
+    color: black;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.practice_div h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    text-align: left;
+    width: 100%;
+    text-decoration: underline;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.practice_div p {
+    font-size: 1rem;
+    line-height: 1.9;
+    text-align: left;
+}
+
+/* CARD SECTION */
+.sample_div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    background-color: white;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.sample_div:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(239, 69, 36, 0.15);
+}
+
+.sample_div div {
+    flex: 1;
+    max-width: 600px;
+}
+
+.sample_div img {
+    width: 100%;
+    max-width: 550px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease;
+}
+
+.sample_div img:hover {
+    transform: scale(1.03);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+    .practice_div {
+        padding: 2rem 1.5rem;
+        gap: 3rem;
+    }
+
+    .sample_div {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .sample_div div {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .sample_div img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .practice_div h2 {
+        font-size: 1.6rem;
+    }
+
+    .practice_div p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+}

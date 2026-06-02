@@ -1,0 +1,237 @@
+.file-claim-container {
+  color: #333;
+  line-height: 1.7;
+  background-color: #fafafa;
+}
+
+.file-claim-container p{
+    padding: 1px 15%;
+}
+
+.orange {
+    background-color: #EF4524;
+    padding: 3rem 0rem 3rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: white;
+}
+
+
+.back-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+}
+
+.back-home1 {
+  color: #EF4524;
+}
+
+.back-home:hover {
+  color: #008cff;
+  transition: 0.4s;
+}
+
+
+.direction-title{
+    color: #EF4524;
+    font-size: 1.5rem;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.direction-text{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.R_div3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2%;
+  flex-wrap: wrap;
+}
+
+
+.direction-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 420px;
+  flex: 1 1 320px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.direction-image img {
+  width: 100%;
+  max-width: 275px;
+  margin: .25rem 0;
+}
+
+.claim-btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #EF4524;
+  color: white;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  border: 1px solid #EF4524;
+}
+
+.claim-btn:hover {
+  background-color: white;
+  border: 1px solid #EF4524;
+  color: #EF4524;
+}
+
+.consent-section {
+  font-size: 0.95rem;
+  color: #555;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  background: #fff;
+  padding: 40px 20px;
+  margin-top: 60px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ----- PFAS Mini Card styles (inlined into file_claim_page.css) ----- */
+.pfasMiniCard{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 14px;
+  background: #fff;
+  padding: 16px;
+  margin: 12px 0;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.pfasMiniCard:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+  border-color: rgba(0,0,0,0.18);
+}
+
+.pfasMiniTop{
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pfasMiniTitle{
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.pfasMiniDesc{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  opacity: 0.9;
+}
+
+.pfasMiniUrgency{
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pfasMiniBadge{
+  background: #EF4524;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.pfasMiniDeadline{
+  font-size: 13px;
+  font-weight: 700;
+  opacity: 0.95;
+}
+
+.pfasMiniImgWrap{
+  flex: 0 0 auto;
+  width: 92px;
+  height: 72px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: #f5f7fb;
+}
+
+.pfasMiniImg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pfasMiniActions{
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pfasMiniPrimary{
+  font-weight: 800;
+  color: #EF4524;
+}
+
+.pfasMiniSecondary{
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+@media (max-width: 600px){
+  .R_div3{
+    display: flex;
+    flex-direction: column;
+  }
+  .pfasMiniTop{
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  .pfasMiniImgWrap{
+    width: 100%;
+    height: 140px;
+  }
+  .pfasMiniActions{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+

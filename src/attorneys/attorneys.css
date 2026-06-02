@@ -1,0 +1,231 @@
+.main_didiv {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1% 12% 4% 12%;
+    font-family: "Playfair Display";
+}
+
+.about_pp{
+    margin-top: 5%;
+}
+
+.about_pp {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile_details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.details_profile {
+    text-align: left;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: end;
+}
+
+.details_profile2 {
+    text-align: left;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: end;
+}
+
+.details_profile p strong {
+    font-size: 18px;
+    color: black;
+}
+
+.details_profile2 p strong {
+    font-size: 18px;
+    color: black;
+}
+
+
+.details_profile2 strong {
+    font-size: 18px;
+    color: black;
+    text-align: left;
+    width: 100%;
+    font-size: 2rem;
+    color: #EF4524;
+}
+
+.details_profile2 h5{
+    margin: 0;
+    text-align: start;
+    width: 100%;
+    color: rgb(85, 85, 85);
+}
+
+
+.details_profile strong, .profile_details strong {
+    font-size: 2rem;
+    color: #EF4524;
+}
+
+.profile_details img {
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #EF4524;
+    max-width: 24rem;
+}
+
+.about_pp {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8%;
+}
+
+.news_page{
+    color: white;
+}
+.partnerCard {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  border: 2px solid #ef4524;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #ffffff;
+  max-width: 880px;
+  width: 100%;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  margin-top: 1rem;
+}
+
+.partnerCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+.partnerCard__logoPane {
+  background: linear-gradient(160deg, #0b1220, #111b2e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+
+.partnerCard__logo {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.35));
+}
+
+.partnerCard__content {
+  padding: 28px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.partnerCard__title {
+  margin: 0 0 10px 0;
+  font-size: 1.15rem;
+  letter-spacing: 0.2px;
+  color: #0f172a;
+}
+
+.partnerCard__line {
+  margin: 0;
+  color: #1f2937;
+  line-height: 1.55;
+  font-size: 0.98rem;
+}
+
+.partnerCard__phones {
+  margin-top: 10px;
+}
+
+.partnerCard__label {
+  font-weight: 600;
+  color: #0f172a;
+  margin-right: 6px;
+}
+
+.partnerCard__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: #ef4524;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+
+  box-shadow: 0 10px 16px rgba(239, 69, 36, 0.25);
+  transition: transform 160ms ease, filter 160ms ease, box-shadow 160ms ease;
+}
+
+.partnerCard__cta:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.98);
+  box-shadow: 0 14px 22px rgba(239, 69, 36, 0.32);
+}
+
+.partnerCard__cta:active {
+  transform: translateY(0px);
+}
+
+.partnerCard__cta:focus-visible {
+  outline: 3px solid rgba(239, 69, 36, 0.35);
+  outline-offset: 3px;
+}
+
+.partnerCard__ctaIcon {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+/* Responsive: stack logo on top */
+@media (max-width: 760px) {
+  .partnerCard {
+    grid-template-columns: 1fr;
+  }
+
+  .partnerCard__logoPane {
+    padding: 20px;
+  }
+
+  .partnerCard__content {
+    padding: 20px;
+  }
+
+  .partnerCard__cta {
+    align-self: stretch;
+  }
+}
+@media (max-width: 768px) {
+    .about_pp{
+        flex-direction: column;
+        max-width: 98%;
+        padding-top: 10%;
+    }
+
+    .profile_details img{
+        max-width: 98%;
+    }
+}

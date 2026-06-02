@@ -1,0 +1,58 @@
+.profile_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: #d9d9d9;
+}
+
+.profile_div1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: #d9d9d9;
+    gap: 4rem;
+}
+
+.david img, .bartlett img{
+    max-width: 18rem;
+    max-height: 20rem;
+}
+
+.profile_div div strong{
+    padding-top: 20px;
+}
+
+.profile_div div p{
+    margin: 0;
+}
+
+.profile_div div h1 {
+    margin-bottom: 2%;
+}
+
+.david, .bartlett {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: #d9d9d9;
+}
+
+@media (max-width: 800px) {
+    .profile_div{
+        flex-direction: column;
+    }
+
+    .profile_div1{
+        flex-direction: column;
+    }
+}

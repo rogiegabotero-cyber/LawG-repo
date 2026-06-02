@@ -1,0 +1,158 @@
+.about_section {
+    width: 100%;
+    background-color: #f8f8f8;
+    color: white;
+}
+
+/* TOP ORANGE HEADER */
+.orange {
+    background-color: #EF4524;
+    padding: 4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.orange h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* BREADCRUMB */
+.back_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+}
+
+.back-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.back-home:hover {
+    color: #008cff;
+}
+
+.back-home1 {
+    color: #EF4524;
+}
+
+/* MAIN CONTENT */
+.aboout_content {
+    margin: 4% 10% 0 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: left;
+    color: black;
+}
+
+.aboout_content h1 {
+    color: #EF4524;
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.aboout_content p {
+    line-height: 1.9;
+}
+
+/* VISION & MISSION */
+.vm_div {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.vm_div div {
+    flex: 1;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.vm_div div:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(239, 69, 36, 0.15);
+}
+
+.vm_div div h1 {
+    color: #EF4524;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+/* BOTTOM TEXT */
+.about_section > p {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-top: 1px solid #ececec;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+    .orange h2 {
+        font-size: 2.4rem;
+    }
+
+    .aboout_content {
+        margin: 4% 5% 0 5%;
+    }
+
+    .aboout_content h1 {
+        font-size: 2rem;
+    }
+
+    .vm_div {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .orange {
+        padding: 3rem 1rem;
+    }
+
+    .orange h2 {
+        font-size: 2rem;
+    }
+
+    .aboout_content {
+        margin: 8% 5% 0 5%;
+    }
+
+    .aboout_content h1 {
+        font-size: 1.7rem;
+    }
+
+    .vm_div div {
+        padding: 1.5rem;
+    }
+
+    .vm_div div h1 {
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,77 @@
+.about_div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 3rem;
+    gap: 4%;
+    color: #000000;
+    background-color: #d9d9d9;
+    font-family: "Playfair Display";
+}
+
+.left_div{
+    max-width: 30%;
+    text-align: left;
+}
+
+.left_div button{
+    color: white;
+    background-color: #EF4524;
+    border: #EF4524 1px solid;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-weight: 400;
+    font-size: 20px;
+    font-family: "Playfair Display";
+}
+
+.left_div button:hover {
+    color: #EF4524;
+    background-color: #ffffff;
+    border: #EF4524 1px solid;
+    font-family: "Playfair Display";
+}
+
+.right_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right_div img{
+    max-width: 60%;
+}
+
+.right_div strong{
+    padding-top: 20px;
+}
+
+.right_div p{
+    margin: 0;
+}
+
+@media (max-width: 868px){
+    .about_div{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 10%;
+        padding-top: 10%;
+}
+
+.left_div{
+    text-align: center;
+    max-width: 90%;
+}
+
+.left_div p{
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+}

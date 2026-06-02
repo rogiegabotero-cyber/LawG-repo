@@ -1,0 +1,159 @@
+.contacts_main {
+    color: rgb(255, 255, 255);
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    font-family: "Playfair Display";
+    padding-top: 2%;
+    width: 100%;
+    max-height: 40%;
+    background: 
+    linear-gradient(rgba(0, 0, 0, 0.322), rgba(0, 0, 0, 0.473)),
+    url('../assets/background2.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+.contacts_main h1{
+    margin-bottom: 1%;
+}
+
+button[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.details {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5%;
+    width: 100%;
+    font-size: 18px;
+}
+
+.l_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.l_div input, textarea {
+    border-radius: 5px;
+    border: none;
+    padding: 5px;;
+}
+    
+
+.input_l {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1%;
+    margin-bottom: 1%;
+    width: 100%;
+}
+
+.input_R {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.input_R input {
+    margin-bottom: 1%;
+}
+
+.input_R textarea {
+    background-color: white;
+    max-width: 97%;
+    color: black;
+    font-family: "Playfair Display";
+}
+
+.R_div{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.icons1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icons1 i{
+    padding-right: 10px;
+}
+
+@media (max-width: 768px){
+    .details{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .input_l{
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    .input_R input{
+        margin-bottom: .5rem;
+    }
+
+    .input_l input {
+        margin-bottom: .5rem;
+    }
+
+    
+    .input_l textarea {
+        margin-bottom: 1%;
+        
+    }
+
+     .input_R textarea{
+        max-width: 95%;
+     }
+
+
+     .icons1 p{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+     }
+
+     .R_div div{
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        text-align: left;
+        max-width: 80%;
+        padding-left: 5%;
+        
+     }
+
+     .R_div{
+        margin-bottom: 5%;
+        margin-top: 5%;
+     }
+
+     .contacts_main h1 {
+        margin-bottom: 5%;
+     }
+}

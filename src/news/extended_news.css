@@ -1,0 +1,48 @@
+.maindiv_athens{
+    display: flex;
+    flex-direction: column;
+}
+
+.orange_h2 {
+    color: #EF4524;
+    text-align: left;
+    margin: 5% 0% 0% 10%;
+}
+
+.bullet_h2 {
+    color: black;
+    text-align: left;
+    font-size: 19px;
+    padding: 2% 2% 2% 2%;
+    margin: 0% 10% 0% 10%;
+}
+
+.context {
+    color: black;
+    text-align: left;
+    margin: 2% 10% 3% 10%;
+}
+
+.footer33 {
+    background: #EF4524;
+    color: white;
+    left: 0;
+    right: 0;
+    padding-left:10%;
+    padding-right: 10%;
+} 
+
+.footer33 button {
+    background-color: black;
+}
+
+@media (max-width: 768px){
+
+    .maindiv_athens{
+        padding-top: 10%;
+    }
+
+    .orange_h2{
+        max-width: 80%;
+    }
+}

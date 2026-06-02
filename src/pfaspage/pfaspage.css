@@ -1,0 +1,334 @@
+
+
+.pfaspage {
+  min-height: 100vh;
+  background: #f5f7fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #111;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.pfas-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.pfas-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  width: 100%;
+  background-color: #EF4524;
+  color: #f5f7fb;
+  padding: 3rem 0;
+}
+
+.pfas-header h1 {
+  margin: 0;
+  font-size: 38px;
+  letter-spacing: 0;          
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.pfas-main {
+  padding: 48px 0 72px;
+  text-align: left;
+}
+
+.pfas-section {
+  margin: 0 0 44px;
+}
+
+.pfas-section h2 {
+  margin: 0 0 14px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+
+}
+
+.pfas-section p {
+  margin: 0 0 14px;
+  line-height: 1.9;
+}
+.pfas-list{
+  list-style: none;
+  padding: 14px 16px;                
+  margin: 8px 0 18px;
+
+  border: 1px solid rgba(0,0,0,0.12); 
+  border-radius: 10px;               
+  background: #fff;                  
+}
+
+.pfas-list li + li{
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding-top: 12px;
+}
+
+.pfas-list li{
+  position: relative;
+  padding-left: 22px;      
+  margin: 12px 0;
+}
+
+
+.pfas-list2 li{
+    list-style: none;
+    padding: 14px 16px;                
+    margin: 8px 0 18px;
+    color: #fff;
+    border: 1px solid rgba(0,0,0,0.12); 
+    border-radius: 10px;               
+    background: #ff4b4b;  
+}
+
+.pfas-list li::before{
+  content: "-";
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: inherit;
+}
+
+
+.pfas-list li {
+  margin: 12px 0;
+}
+
+.pfas-list strong {
+  font-weight: 500;
+}
+
+.pfas-tableWrap {
+  overflow-x: auto;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: #fff;
+}
+
+.pfas-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 860px;
+  background: #fff;
+}
+
+.pfas-table th,
+.pfas-table td {
+  text-align: left;
+  padding: 16px 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  vertical-align: top;
+}
+
+.pfas-table thead th {
+  font-size: 14px;
+  font-weight: 700;
+  opacity: 1;
+  background: rgba(0,0,0,0.02);
+}
+
+.pfas-desc {
+  font-weight: 700;
+}
+
+.pfas-cta {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.pfas-btnPrimary {
+  border: 1px solid rgba(0,0,0,0.22);
+  background: #EF4524;
+  padding: 12px 4rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+/* Floating animation for the CTA button */
+.pfas-btnPrimary {
+  animation: pfas-float 2.6s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes pfas-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+/* Pause float on hover/active for better UX */
+.pfas-btnPrimary:hover,
+.pfas-btnPrimary:active {
+  animation-play-state: paused;
+}
+
+
+.pfas-btnPrimary:hover {
+  transform: translateY(-1px);
+}
+
+.pfas-btnPrimary:active {
+  transform: translateY(0);
+}
+
+/* Red outline for critical deadline rows */
+.pfas-rowCritical td{
+  border-top: 2px solid #ff4b4b !important;
+  border-bottom: 2px solid #ff4b4b !important;
+  
+}
+
+.pfas-rowCritical td:first-child{
+  border-left: 2px solid #ff4b4b !important;
+  
+}
+
+.pfas-rowCritical td:last-child{
+  border-right: 2px solid #ff4b4b !important;
+  
+}
+
+.pfas-section-pfas-cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* -------- Tablet and down -------- */
+@media (max-width: 900px) {
+  html{
+    width: 100%;
+  }
+
+  .pfas-container {
+    padding: 0 16px;
+    width: 90%;
+  }
+
+  .pfas-header {
+    padding: 2.25rem 0;
+  }
+
+  .pfas-header h1 {
+    font-size: clamp(24px, 4vw, 34px);
+  }
+
+  .pfas-main {
+    padding: 32px 0 56px;
+  }
+
+  .pfas-section h2 {
+    font-size: clamp(20px, 3.2vw, 26px);
+  }
+
+  .pfas-list,
+  .pfas-list2 li {
+    padding: 12px 14px;
+    border-radius: 10px;
+  }
+
+  .pfas-cta {
+    justify-content: center;
+  }
+
+  .pfas-btnPrimary {
+    padding: 12px 16px;
+  }
+
+  .pfas-table th,
+  .pfas-table td {
+    padding: 12px 10px;
+  }
+}
+
+/* -------- Mobile -------- */
+@media (max-width: 600px) {
+  .pfaspage {
+    line-height: 1.7;
+    width: 100%;
+  }
+
+  .pfas-container {
+    width: 80%;
+  }
+
+.pfas-container.pfas-main {
+  padding: 0;
+  margin: 0;
+}
+
+  .pfas-header {
+    justify-content: center;
+    margin: 3rem 0;
+    padding: 0;
+  }
+
+  .pfas-header h1 {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+
+  .pfas-section {
+    width: 95%;
+  }
+
+  .pfas-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .pfas-section p {
+    margin-bottom: 12px;
+  }
+
+
+  .pfas-list li {
+    margin: 10px 0;
+  }
+
+  .pfas-list2 li {
+    padding: 12px 12px;
+  }
+
+  .pfas-tableWrap {
+    border-radius: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pfas-btnPrimary {
+    width: 100%;
+    max-width: 520px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+}
+
+/* -------- Very small devices -------- */
+@media (max-width: 380px) {
+  .pfas-header h1 {
+    font-size: 20px;
+  }
+
+  .pfas-section h2 {
+    font-size: 17px;
+  }
+
+  .pfas-btnPrimary {
+    font-size: 15px;
+  }
+
+  .pfas-table {
+    min-width: 680px;
+  }
+}

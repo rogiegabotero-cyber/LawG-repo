@@ -1,0 +1,280 @@
+body {
+  padding: 0;
+  margin: 0;
+  color: white;
+  text-align: center;
+  font-family: "Playfair Display";
+}
+
+#main {
+  width: 100%;
+  padding-top: 12%;
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  background-size: 110%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1.5s ease-in-out, background-size 5s ease-in-out;
+  animation: zoomEffect 10s ease-in-out infinite;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: 110%;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: zoomEffect 10s ease-in-out infinite; /* ✅ apply zoom here */
+  transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 0;
+}
+
+
+@keyframes zoomEffect {
+  0% {
+    background-size: 110%;
+  }
+  50% {
+    background-size: 120%;
+  }
+  100% {
+    background-size: 110%;
+  }
+}
+
+#main::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+h1, h2, .slider-arrows {
+  position: relative;
+  z-index: 2;
+  padding: 0;
+  margin: 0;
+}
+
+.contactus123 {
+  background-color: #1e90ff; 
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  border: #1e90ff 1px solid;
+  transition: background-color 0.3s ease;
+  z-index: 1;
+  font-family: "Playfair Display";
+}
+
+.contactus123:hover {
+  background-color: #4682b4; 
+  border: #ffffff 1px solid;
+}
+
+#main button {
+  background-color: #00000000;
+  font-family: "Playfair Display", Sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  border-radius: 0;
+  padding: 9px 7px ;
+  border: none;
+  cursor: pointer;
+}
+
+
+#main a {
+  position: relative;
+    background-color: #EF4524;
+    font-family: "Playfair Display", Sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    border-width: 0px;
+    border-radius: 0px;
+    padding: .5rem .5rem .8rem .5rem;
+}
+
+#main a:hover {
+    background-color: #ef462400;
+    border: solid 1px #ffffff;
+    color: #ffffff;
+    font-family: "Playfair Display";
+}
+
+#main a button:hover {
+    color: white;
+    font-family: "Playfair Display";
+}
+
+.slider-arrows {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+
+.arrow {
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  padding: 8px;
+  border-radius: 50%;
+  font-family: "Playfair Display";
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+h2 {
+  margin: 0;
+}
+
+
+@media (max-width: 768px) {
+  @keyframes zoomEffect {
+  0% {
+    background-size: 200%;
+  }
+  50% {
+    background-size: 250%;
+  }
+  100% {
+    background-size: 200%;
+  }
+}
+
+#main h1 {
+  margin: 0;
+  font-size: 1rem;
+  padding-top: 30%;
+}
+
+#main h2 {
+  margin: 0;
+  font-size: .5rem;
+}
+
+
+}
+
+/* --- GALLERY-LIKE SLIDE EFFECT --- */
+.slide-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 0;
+}
+
+/* Slide-in directions */
+.slide.next.right {
+  animation: slideFromRight 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.slide.next.left {
+  animation: slideFromLeft 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Keyframes for swipe motion (like phone gallery) */
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slide.current.right {
+  animation: slideOutLeft 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+.slide.current.left {
+  animation: slideOutRight 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes slideOutLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes slideOutRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+
+/* --- TEXT SLIDE-IN FROM BOTTOM --- */
+.text-slide {
+  opacity: 0;
+  transform: translateY(60px);
+  animation: slideTextUp 1s ease forwards;
+  position: relative;
+  z-index: 9;
+}
+
+.text-slide button{
+  margin-top: 4rem;
+}
+
+
+@keyframes slideTextUp {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth stagger for natural timing */
+h1.text-slide {
+  animation-delay: 0.1s;
+}
+
+h2.text-slide {
+  animation-delay: 0.3s;
+}
+
+div.text-slide {
+  animation-delay: 0.5s;
+}

@@ -5,6 +5,7 @@ import { House, ChevronsRight, Eye, Target } from "lucide-react";
 import Upset from '../assets/upset.webp'
 import Lawyer from '../assets/lawyer_fill.webp'
 import WebChem from '../assets/web_chem.webp'
+import Water from '../assets/water.png'
 
 const news = () => {
 
@@ -134,6 +135,52 @@ const news = () => {
                     </div>
                     <div className='date'>
                         <data value="">April 10, 2025</data>
+                        ·
+                        <p>No Comments</p>
+                    </div> 
+                </div>
+                
+            </div>
+
+           <div className='container8'>
+                    
+                <div className='Image'>
+                    <a
+                      className='learn_more'
+                      href="https://www.pfasclaimaction.com/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                        <img src={Water} alt="" />
+                    </a>
+                </div>
+                <div className='mix'>
+                    <div className='words'>
+                        <a
+                        href="https://www.pfasclaimaction.com/"
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{
+                            textDecoration: "none",
+                            color: "black",
+                            cursor: "pointer"
+                        }}
+                        >
+                        <h2>
+                            Your Water System May Be Eligible For Funding You Never Knew Was Available                        </h2>
+                        </a>
+                        
+                        <a
+                          className='learn_more'
+                          href="https://www.pfasclaimaction.com/"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                            Read More » 
+                        </a>
+                    </div>
+                    <div className='date'>
+                        <data value="">June 15, 2026</data>
                         ·
                         <p>No Comments</p>
                     </div> 

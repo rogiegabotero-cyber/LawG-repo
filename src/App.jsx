@@ -67,6 +67,7 @@ import CRCI from "./crc-form/crc_i"
 import CRCJ from "./crc-form/crc_j"
 import PFASForm from "./pfasform/pfasform"
 import PFASPage from "./pfaspage/pfaspage"
+import PFASClaim from "./pfasclaim/pfasclaim"
 import SocialMediaClaimForm from "./social-media-form/SocialMediaClaimForm"
 
 import { Routes, Route } from "react-router-dom";
@@ -311,6 +312,16 @@ function App() {
           <>
             <PFASPage/>
             <Footer />
+          </>
+        }
+        />
+
+        <Route
+        path="/pfasclaim"
+        element={
+          <>
+            <PFASClaim />
+           
           </>
         }
         />

@@ -3,6 +3,7 @@ import './attorneys.css';
 import { Link } from "react-router-dom";
 import { House, ChevronsRight } from "lucide-react";
 import David from '../assets/dg_profile.webp';
+import JanSchlichtmann from '../assets/jan-schlichtmann.webp';
 import Bartlett from '../assets/bartlett.webp'
 import FirmLogo from '../assets/firm-logo.webp'
 
@@ -52,6 +53,32 @@ const Attorneys = () => {
           <div className='profile_details'>
             <img src={David} alt="David Grossman" />
             <strong>Partner</strong>
+          </div>
+        </div>
+
+        <div className='about_pp'>
+          <div className='profile_details jan_profile_details'>
+            <img src={JanSchlichtmann} alt="Jan Schlichtmann" className="jan_profile_image" />
+            <strong>Co-Counsel / Environmental Attorney</strong>
+          </div>
+
+          <div className='details_profile2'>
+            <strong>Jan Schlichtmann</strong>
+            <h5>CO-COUNSEL / ENVIRONMENTAL ATTORNEY</h5>
+            <p>
+              Jan Schlichtmann is one of America's most recognized environmental
+              litigators. His pioneering work in the Woburn, Massachusetts water
+              contamination case, which first united experts in science,
+              medicine, and engineering to prove industrial harm to public
+              health, was chronicled in the national bestseller and major motion
+              picture "A Civil Action," in which he was portrayed by John
+              Travolta.
+              <br />
+              <br />
+              A Cornell Law graduate and Phi Beta Kappa scholar, Schlichtmann
+              has spent his career fighting for communities and public entities
+              against the most powerful industrial defendants in the country.
+            </p>
           </div>
         </div>
       </div>

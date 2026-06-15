@@ -1,0 +1,1009 @@
+.pfasclaim-page,
+.pfasclaim-page *,
+.pfasclaim-page *::before,
+.pfasclaim-page *::after {
+  box-sizing: border-box;
+}
+
+.pfasclaim-page {
+  width: 100%;
+  min-height: 100vh;
+  min-width: 320px;
+  margin: 0;
+  background: #092846;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.pfasclaim-page button,
+.pfasclaim-page input,
+.pfasclaim-page textarea {
+  font-family: Inter, Arial, sans-serif;
+}
+
+.pfasclaim-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pfasclaim-page button {
+  min-height: 50px;
+  border: 0;
+  border-radius: 4px;
+  background: #d3ad42;
+  color: #061d34;
+  font-size: 14px;
+  font-weight: 1000;
+  padding: 0 30px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.pfasclaim-page button:hover {
+  background: #efcf63;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+  transform: translateY(-1px);
+}
+
+.pfasclaim-page .nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: 74px;
+  width: 100%;
+  padding: 0 clamp(46px, 8vw, 116px);
+  background: #0a2b4d;
+  box-shadow: 0 1px rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.pfasclaim-page .brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+}
+
+.pfasclaim-page .brand-button {
+  min-height: auto;
+  padding: 0;
+  background: transparent;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.pfasclaim-page .brand-button:hover {
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.pfasclaim-page .brand b {
+  display: block;
+  font-size: 13px;
+  line-height: 1.05;
+  font-weight: 1000;
+}
+
+.pfasclaim-page .brand small {
+  display: block;
+  color: #b8c3d1;
+  font-size: 11px;
+  font-weight: 1000;
+  letter-spacing: 0.04em;
+}
+
+.pfasclaim-page .shield {
+  color: #073c73;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.pfasclaim-page .links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: #d5dfec;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.pfasclaim-page .links a {
+  position: relative;
+  padding: 27px 0 24px;
+  transition: color 160ms ease;
+}
+
+.pfasclaim-page .links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 18px;
+  height: 2px;
+  background: #d3ad42;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.pfasclaim-page .links a:hover {
+  color: #ffffff;
+}
+
+.pfasclaim-page .links a:hover::after {
+  transform: scaleX(1);
+}
+
+.pfasclaim-page .links button {
+  min-height: 36px;
+  padding-inline: 22px;
+  font-size: 12px;
+}
+
+.pfasclaim-page .section-bg,
+.pfasclaim-page .alt-bg {
+  background-image:
+    linear-gradient(rgba(7, 36, 65, 0.88), rgba(7, 36, 65, 0.94)),
+    url("https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=2200&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+.pfasclaim-page .alt-bg {
+  background-image:
+    linear-gradient(rgba(7, 36, 65, 0.94), rgba(7, 36, 65, 0.98)),
+    url("https://images.unsplash.com/photo-1574482620811-1aa16ffe3c82?auto=format&fit=crop&w=2200&q=80");
+}
+
+.pfasclaim-page .hero {
+  min-height: 690px;
+  padding: 28px 24px 74px;
+  text-align: center;
+}
+
+.pfasclaim-page .top-text {
+  max-width: 700px;
+  margin: 0 auto 28px;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 1000;
+}
+
+.pfasclaim-page .pill,
+.pfasclaim-page .kicker {
+  color: #d5ad3f;
+  font-size: 11px;
+  font-weight: 1000;
+  letter-spacing: 0.24em;
+}
+
+.pfasclaim-page .pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(211, 173, 66, 0.8);
+  border-radius: 999px;
+  padding: 7px 18px;
+  margin-bottom: 24px;
+}
+
+.pfasclaim-page .kicker {
+  width: fit-content;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.pfasclaim-page .kicker::before,
+.pfasclaim-page .kicker::after {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: #d5ad3f;
+}
+
+.pfasclaim-page .hero h1 {
+  margin: 0;
+  font-size: clamp(82px, 10vw, 112px);
+  line-height: 0.82;
+  font-weight: 1000;
+  letter-spacing: -0.04em;
+}
+
+.pfasclaim-page .hero h3 {
+  margin: 24px 0 24px;
+  color: #d5ad3f;
+  font-size: 22px;
+  font-weight: 1000;
+  letter-spacing: 0.14em;
+}
+
+.pfasclaim-page .timer {
+  width: min(100%, 538px);
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+  background: rgba(82, 109, 135, 0.72);
+  border: 1px solid rgba(196, 213, 229, 0.38);
+  border-radius: 8px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+}
+
+.pfasclaim-page .time-box {
+  position: relative;
+  min-width: 0;
+  padding: 18px 10px 17px;
+  background: rgba(91, 119, 145, 0.58);
+  border: 1px solid rgba(211, 224, 236, 0.34);
+  border-radius: 5px;
+}
+
+.pfasclaim-page .time-box:not(:last-child)::after {
+  content: ":";
+  position: absolute;
+  right: -21px;
+  top: 24px;
+  color: rgba(203, 216, 229, 0.58);
+  font-size: 40px;
+  font-weight: 1000;
+}
+
+.pfasclaim-page .time-box b {
+  display: block;
+  font-size: clamp(44px, 5vw, 62px);
+  line-height: 0.9;
+  font-weight: 1000;
+}
+
+.pfasclaim-page .time-box span {
+  display: block;
+  margin-top: 12px;
+  color: #bfcbd8;
+  font-size: 9px;
+  font-weight: 1000;
+  letter-spacing: 0.16em;
+}
+
+.pfasclaim-page .divider {
+  width: 64px;
+  height: 2px;
+  background: #d5ad3f;
+  margin: 38px auto 34px;
+}
+
+.pfasclaim-page .hero h2,
+.pfasclaim-page .section h2 {
+  max-width: 850px;
+  margin: 0 auto 22px;
+  color: #ffffff;
+  font-size: clamp(42px, 4.7vw, 56px);
+  line-height: 1.12;
+  font-weight: 1000;
+  letter-spacing: -0.035em;
+  text-align: center;
+}
+
+.pfasclaim-page .actions {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.pfasclaim-page .ghost {
+  background: rgba(81, 110, 139, 0.52);
+  color: #ffffff;
+  border: 1px solid rgba(207, 222, 238, 0.32);
+}
+
+.pfasclaim-page .ghost:hover {
+  background: rgba(106, 134, 162, 0.68);
+  border-color: rgba(230, 239, 248, 0.52);
+  color: #ffffff;
+}
+
+.pfasclaim-page .section {
+  width: 100%;
+  min-height: 650px;
+  padding: 86px 24px 94px;
+  text-align: center;
+}
+
+.pfasclaim-page .video-section {
+  padding-top: 88px;
+}
+
+.pfasclaim-page .sub {
+  max-width: 710px;
+  margin: 0 auto 38px;
+  color: #c4d0de;
+  font-size: 16px;
+  line-height: 1.55;
+  font-weight: 900;
+}
+
+.pfasclaim-page .video {
+  width: min(680px, 100%);
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  background: #020d1b;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+}
+
+.pfasclaim-page .video iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+.pfasclaim-page .card-row,
+.pfasclaim-page .qual-grid,
+.pfasclaim-page .attorneys {
+  width: min(100%, 930px);
+  margin: 34px auto;
+  display: grid;
+  gap: 18px;
+}
+
+.pfasclaim-page .card-row {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.pfasclaim-page .qual-grid {
+  width: min(100%, 930px);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.pfasclaim-page .glass-card,
+.pfasclaim-page .statement,
+.pfasclaim-page .faq,
+.pfasclaim-page .attorney,
+.pfasclaim-page .contact-card,
+.pfasclaim-page form {
+  background: rgba(70, 99, 129, 0.62);
+  border: 1px solid rgba(203, 218, 232, 0.34);
+  border-radius: 12px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.pfasclaim-page .glass-card {
+  min-height: 142px;
+  padding: 26px 22px;
+  display: grid;
+  place-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 1000;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.pfasclaim-page .glass-card:hover {
+  background: rgba(96, 123, 151, 0.72);
+  border-color: rgba(215, 229, 241, 0.52);
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.08),
+    0 18px 34px rgba(0, 0, 0, 0.22);
+  color: #d3ad42;
+  transform: translateY(-3px);
+}
+
+.pfasclaim-page .qual-grid .glass-card {
+  min-height: 96px;
+}
+
+.pfasclaim-page .icon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.pfasclaim-page .statement {
+  width: min(100%, 690px);
+  margin: 50px auto 0;
+  padding: 38px 45px;
+  color: #edf4fb;
+  font-size: 17px;
+  font-weight: 1000;
+  line-height: 1.55;
+}
+
+.pfasclaim-page .statement button {
+  margin-top: 28px;
+}
+
+.pfasclaim-page .faq {
+  width: min(100%, 690px);
+  margin: 36px auto 0;
+  padding: 16px 36px;
+  text-align: left;
+}
+
+.pfasclaim-page .faq-item {
+  padding: 0;
+  border-bottom: 1px solid rgba(210, 223, 235, 0.18);
+}
+
+.pfasclaim-page .faq-item:last-child {
+  border-bottom: 0;
+}
+
+.pfasclaim-page .faq-question {
+  width: 100%;
+  min-height: auto;
+  padding: 20px 0;
+  background: transparent;
+  border: 0;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  font-size: 16px;
+  font-weight: 1000;
+  line-height: 1.45;
+  text-align: left;
+  white-space: normal;
+  transition: color 160ms ease;
+}
+
+.pfasclaim-page .faq-question:hover {
+  background: transparent;
+  box-shadow: none;
+  color: #d3ad42;
+  transform: none;
+}
+
+.pfasclaim-page .faq-question span {
+  color: #d3ad42;
+  flex: 0 0 auto;
+  font-size: 14px;
+  transition: transform 160ms ease;
+}
+
+.pfasclaim-page .faq-question:hover span {
+  transform: translateY(1px);
+}
+
+.pfasclaim-page .faq-answer {
+  max-width: 570px;
+  margin: -4px 0 22px;
+  color: #d6e0ec;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.55;
+}
+
+.pfasclaim-page .attorneys {
+  width: min(100%, 820px);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.pfasclaim-page .attorney {
+  padding: 38px 28px 46px;
+}
+
+.pfasclaim-page .avatar {
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  border: 3px solid rgba(211, 173, 66, 0.55);
+  background: #8fa0af;
+  overflow: hidden;
+}
+
+.pfasclaim-page .avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.pfasclaim-page .attorney h3 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 1000;
+}
+
+.pfasclaim-page .attorney b {
+  color: #d3ad42;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.pfasclaim-page .attorney p {
+  color: #d4deea;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+.pfasclaim-page .deadline h2 {
+  font-size: clamp(58px, 6.5vw, 82px);
+}
+
+.pfasclaim-page .deadline .timer {
+  margin-top: 34px;
+}
+
+.pfasclaim-page .contact {
+  min-height: 760px;
+  padding-top: 52px;
+  padding-bottom: 74px;
+  background-position: center;
+  background-image: none;
+  background-color: #132a4d;
+}
+
+.pfasclaim-page .contact .kicker {
+  display: none;
+}
+
+.pfasclaim-page .contact h2 {
+  max-width: 920px;
+  margin-bottom: 10px;
+  font-size: clamp(50px, 5vw, 62px);
+  line-height: 1.04;
+}
+
+.pfasclaim-page .contact .sub {
+  max-width: 620px;
+  margin-bottom: 0;
+  color: #d8e3ef;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.pfasclaim-page .contact-sub {
+  max-width: 620px;
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 1000;
+}
+
+.pfasclaim-page .contact-grid {
+  width: min(100%, 1080px);
+  margin: 52px auto 0;
+  display: grid;
+  grid-template-columns: minmax(220px, 250px) minmax(420px, 1fr);
+  gap: 28px;
+  text-align: left;
+  align-items: start;
+  justify-content: center;
+}
+
+.pfasclaim-page .contact-card {
+  min-height: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 18px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.pfasclaim-page .mini-card {
+  min-height: 108px;
+  border: 1px solid rgba(126, 152, 185, 0.24);
+  border-radius: 16px;
+  padding: 18px 22px 16px;
+  text-align: left;
+  background: rgba(37, 57, 96, 0.94);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.pfasclaim-page .mini-card b,
+.pfasclaim-page form label,
+.pfasclaim-page .footer-title {
+  color: #f0c24c;
+  font-size: 11px;
+  font-weight: 1000;
+  letter-spacing: 0.12em;
+}
+
+.pfasclaim-page .mini-card strong {
+  display: block;
+  margin-top: 10px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.15;
+  font-weight: 1000;
+}
+
+.pfasclaim-page .mini-card p,
+.pfasclaim-page .email,
+.pfasclaim-page form small {
+  color: #d9e4f0;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.6;
+}
+
+.pfasclaim-page .email {
+  display: none;
+}
+
+.pfasclaim-page .email::before {
+  content: "✉";
+  color: #e6eef7;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.pfasclaim-page .email::after {
+  content: "dgrossman@grossmankelly.com";
+  color: #f0f6fc;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.4;
+}
+
+.pfasclaim-page form,
+.pfasclaim-page .contact-form {
+  min-height: 374px;
+  padding: 24px 24px 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 14px;
+  align-content: start;
+  background: rgba(37, 57, 96, 0.96);
+  border: 1px solid rgba(126, 152, 185, 0.22);
+  border-radius: 18px;
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.03),
+    0 16px 30px rgba(4, 12, 28, 0.18);
+}
+
+.pfasclaim-page form label,
+.pfasclaim-page .contact-label {
+  display: grid;
+  gap: 8px;
+}
+
+.pfasclaim-page .contact-label {
+  align-content: start;
+  color: #f0c24c;
+  font-size: 11px;
+  font-weight: 1000;
+  letter-spacing: 0.12em;
+}
+
+.pfasclaim-page .full {
+  grid-column: 1 / -1;
+}
+
+.pfasclaim-page .contact-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 8px;
+}
+
+.pfasclaim-page .contact-step {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  color: #6f86ad;
+}
+
+.pfasclaim-page .contact-step-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(88, 110, 148, 0.66);
+  color: #dbe4f0;
+  font-size: 13px;
+  font-weight: 1000;
+}
+
+.pfasclaim-page .contact-step-line {
+  width: 28px;
+  height: 1px;
+  margin: 0 10px;
+  background: rgba(240, 194, 76, 0.7);
+}
+
+.pfasclaim-page .contact-step-label {
+  margin-left: 10px;
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+  display: none;
+}
+
+.pfasclaim-page .contact-step.is-active,
+.pfasclaim-page .contact-step.is-complete {
+  color: #b8c9de;
+}
+
+.pfasclaim-page .contact-step.is-active .contact-step-number,
+.pfasclaim-page .contact-step.is-complete .contact-step-number {
+  background: #f0c24c;
+  color: #152949;
+}
+
+.pfasclaim-page .contact-step.is-active .contact-step-label {
+  display: inline;
+}
+
+.pfasclaim-page input,
+.pfasclaim-page textarea {
+  width: 100%;
+  min-height: 32px;
+  border: 1px solid rgba(96, 132, 178, 0.56);
+  border-radius: 6px;
+  background: #1a3a66;
+  padding: 8px 12px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.3;
+  box-shadow: none;
+}
+
+.pfasclaim-page textarea {
+  min-height: 88px;
+  resize: vertical;
+}
+
+.pfasclaim-page input::placeholder,
+.pfasclaim-page textarea::placeholder {
+  color: #7890b2;
+}
+
+.pfasclaim-page input:focus,
+.pfasclaim-page textarea:focus {
+  outline: none;
+  border-color: rgba(240, 194, 76, 0.85);
+  box-shadow: 0 0 0 3px rgba(240, 194, 76, 0.12);
+}
+
+.pfasclaim-page form button {
+  width: auto;
+  min-width: 100px;
+  min-height: 32px;
+  padding: 0 16px;
+  margin-top: 0;
+  border-radius: 6px;
+  font-size: 12px;
+  box-shadow: none;
+}
+
+.pfasclaim-page form small {
+  align-self: center;
+  margin-top: 0;
+}
+
+.pfasclaim-page .contact-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.pfasclaim-page .contact-actions-left,
+.pfasclaim-page .contact-actions-right {
+  display: flex;
+  align-items: center;
+}
+
+.pfasclaim-page .contact-secondary-button {
+  background: #20416d;
+  color: #ffffff;
+  border: 1px solid rgba(96, 132, 178, 0.45);
+}
+
+.pfasclaim-page .contact-secondary-button:hover {
+  background: #29517f;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.pfasclaim-page .contact-disclaimer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.pfasclaim-page .contact-note {
+  max-width: none;
+  color: #7187a8;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.pfasclaim-page footer {
+  background: #020d1b;
+  padding: 46px clamp(24px, 8vw, 120px) 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 64px;
+  color: #b5c1cf;
+}
+
+.pfasclaim-page footer p {
+  max-width: 390px;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.55;
+}
+
+.pfasclaim-page .footer-brand {
+  margin-bottom: 24px;
+}
+
+.pfasclaim-page footer button {
+  min-height: 34px;
+  margin-top: 10px;
+  padding-inline: 18px;
+  font-size: 12px;
+}
+
+.pfasclaim-page .legal {
+  grid-column: 1 / -1;
+  border-top: 1px solid rgba(203, 218, 232, 0.14);
+  padding-top: 26px;
+  color: #637184;
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .pfasclaim-page .nav {
+    padding-inline: 20px;
+  }
+
+  .pfasclaim-page .links {
+    gap: 16px;
+  }
+
+  .pfasclaim-page .links a {
+    display: none;
+  }
+
+  .pfasclaim-page .card-row,
+  .pfasclaim-page .attorneys,
+  .pfasclaim-page .contact-grid,
+  .pfasclaim-page footer {
+    grid-template-columns: 1fr;
+  }
+
+  .pfasclaim-page .contact-grid {
+    width: min(100%, 720px);
+  }
+
+  .pfasclaim-page .contact-card,
+  .pfasclaim-page form {
+    min-height: auto;
+  }
+
+  .pfasclaim-page .qual-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .pfasclaim-page button {
+    width: 100%;
+  }
+
+  .pfasclaim-page .faq-question {
+    width: 100%;
+  }
+
+  .pfasclaim-page .nav {
+    height: auto;
+    min-height: 66px;
+    padding-block: 12px;
+  }
+
+  .pfasclaim-page .brand small {
+    font-size: 9px;
+  }
+
+  .pfasclaim-page .links button {
+    width: auto;
+    padding-inline: 12px;
+  }
+
+  .pfasclaim-page .hero {
+    min-height: auto;
+    padding-top: 36px;
+  }
+
+  .pfasclaim-page .hero h1 {
+    font-size: clamp(60px, 18vw, 86px);
+  }
+
+  .pfasclaim-page .hero h3 {
+    font-size: 16px;
+  }
+
+  .pfasclaim-page .timer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .pfasclaim-page .time-box:not(:last-child)::after {
+    display: none;
+  }
+
+  .pfasclaim-page .actions,
+  .pfasclaim-page form {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .pfasclaim-page .contact-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .pfasclaim-page .contact-actions-left,
+  .pfasclaim-page .contact-actions-right,
+  .pfasclaim-page .contact-stepper {
+    width: 100%;
+  }
+
+  .pfasclaim-page .section {
+    min-height: auto;
+    padding-block: 70px;
+  }
+
+  .pfasclaim-page .hero h2,
+  .pfasclaim-page .section h2 {
+    font-size: clamp(36px, 11vw, 48px);
+  }
+
+  .pfasclaim-page .qual-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pfasclaim-page .statement,
+  .pfasclaim-page .faq,
+  .pfasclaim-page .attorney,
+  .pfasclaim-page .contact-card,
+  .pfasclaim-page form {
+    padding: 24px;
+  }
+
+  .pfasclaim-page .contact-stepper {
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+
+  .pfasclaim-page .contact-step-label {
+    margin-right: 12px;
+  }
+}

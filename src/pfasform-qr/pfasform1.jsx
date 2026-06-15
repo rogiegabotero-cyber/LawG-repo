@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import SignatureCanvas from "react-signature-canvas";
 
 const EMPTY_PARTY = {
   entityName: "",
@@ -20,14 +21,15 @@ const phoneChars = (v) => /^[0-9+\-() ]*$/.test(v);
 
 const SERVICE_ID = import.meta.env.VITE_SERVICE_ID8;
 const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID8;
-const PUBLIC_KEY = import.meta.env.VITE_USER_ID8
+const PUBLIC_KEY = import.meta.env.VITE_USER_ID8;
 
-const MAX_ATTACHMENT_BYTES = 1_900_000; // ~1.90 MB (decimal MB)
+const MAX_ATTACHMENT_BYTES = 1_900_000;
+const MAX_SIGNATURE_BYTES = 20 * 1024 * 1024;
 
 function formatMB(bytes) {
   if (bytes < 1024) return `${bytes} B`;
   if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`;
-  return `${(bytes / 1_000_000).toFixed(2)} MB`; // decimal MB
+  return `${(bytes / 1_000_000).toFixed(2)} MB`;
 }
 
 const toastError = (msg) => {
@@ -102,11 +104,12 @@ const buildEmailJsParams = (form) => {
     gallons_per_minute: form.system.gallonsPerMinute || "",
     supporting_doc: form.system.supportingDoc?.name || "",
 
+    signature_image: form.client.signatureImage || "",
+
     sheet_row: "",
   };
 };
 
-// These must match your template variables exactly
 const EMAILJS_FIELD_NAMES = [
   "time",
   "signed_line",
@@ -154,6 +157,8 @@ const EMAILJS_FIELD_NAMES = [
   "gallons_per_day",
   "gallons_per_minute",
   "supporting_doc",
+
+  "signature_image",
 
   "sheet_row",
 ];
@@ -324,7 +329,6 @@ function Dropzone({ file, onPickFile }) {
         )} MB.`
       );
 
-      // reset the native input so selecting the same file again triggers onChange
       if (fileInputRef.current) fileInputRef.current.value = "";
       return;
     }
@@ -370,7 +374,6 @@ function Dropzone({ file, onPickFile }) {
         </div>
       ) : null}
 
-
       <input
         ref={fileInputRef}
         id="supportingDocInput"
@@ -383,6 +386,162 @@ function Dropzone({ file, onPickFile }) {
   );
 }
 
+function SignaturePanel({
+  sigRef,
+  signatureMode,
+  setSignatureMode,
+  signatureImage,
+  signatureFile,
+  onSave,
+  onClear,
+  onUploadSignature,
+  error,
+}) {
+  const signatureUploadRef = React.useRef(null);
+
+  const validateSignatureFile = (file) => {
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      toastError("Please upload an image file for the signature. PNG, JPG, JPEG, or WEBP is recommended.");
+      if (signatureUploadRef.current) signatureUploadRef.current.value = "";
+      return;
+    }
+
+    if (file.size > MAX_SIGNATURE_BYTES) {
+      toastError(
+        `Signature file too large (${formatMB(file.size)}). Please upload an image under ${formatMB(
+          MAX_SIGNATURE_BYTES
+        )}.`
+      );
+      if (signatureUploadRef.current) signatureUploadRef.current.value = "";
+      return;
+    }
+
+    onUploadSignature(file);
+  };
+
+  const onDropSignature = (ev) => {
+    ev.preventDefault();
+    ev.stopPropagation();
+
+    const file = ev.dataTransfer?.files?.[0];
+    if (file) validateSignatureFile(file);
+  };
+
+  return (
+    <section className="pfas-section">
+      <h1 className="pfas-h1">ATTACH SIGNATURE</h1>
+
+      <p className="pfas-paragraph">
+        Choose how you want to provide your signature. You may draw your signature or upload an electronic signature image.
+      </p>
+
+      <Field label="Signature Option" required error={error}>
+        <select
+          className={`pfas-input ${error ? "pfas-inputInvalid" : ""}`}
+          value={signatureMode}
+          onChange={(e) => {
+            setSignatureMode(e.target.value);
+            if (e.target.value === "draw") {
+              if (signatureUploadRef.current) signatureUploadRef.current.value = "";
+            }
+          }}
+        >
+          <option value="">Select signature option</option>
+          <option value="draw">Draw signature</option>
+          <option value="upload">Upload electronic signature</option>
+        </select>
+      </Field>
+
+      {signatureMode === "draw" ? (
+        <div className="pfas-signatureDropdown">
+          <p className="pfas-paragraph">
+            Draw your signature below. You may click Attach Signature before submitting, or it will be attached automatically when you submit.
+          </p>
+
+          <div className="pfas-signatureBox">
+            <SignatureCanvas
+              ref={sigRef}
+              penColor="black"
+              canvasProps={{
+                width: 700,
+                height: 220,
+                className: "pfas-signatureCanvas",
+              }}
+            />
+          </div>
+
+          <div className="pfas-signatureActions">
+            <button type="button" className="pfas-btn" onClick={onClear}>
+              Clear
+            </button>
+
+            <button type="button" className="pfas-btn pfas-btn-primary" onClick={onSave}>
+              Attach Signature
+            </button>
+          </div>
+        </div>
+      ) : null}
+
+      {signatureMode === "upload" ? (
+        <div className="pfas-signatureDropdown">
+          <div
+            className="pfas-signatureUploadBox"
+            onDragOver={(e) => e.preventDefault()}
+            onDrop={onDropSignature}
+            onClick={() => signatureUploadRef.current?.click()}
+            role="button"
+            tabIndex={0}
+            aria-label="Upload electronic signature"
+          >
+            <div className="pfas-dropTitle">
+              <span className="pfas-uploadIcon" aria-hidden="true">
+                ⭱
+              </span>
+              <span>Upload Electronic Signature</span>
+            </div>
+
+            <div className="pfas-dropHint">
+              Drag &amp; drop a signature image here, or click to browse
+              <div className="pfas-dropSubHint">
+                Accepted: PNG, JPG, JPEG, WEBP. Max file size: {formatMB(MAX_SIGNATURE_BYTES)}
+              </div>
+            </div>
+
+            {signatureFile ? (
+              <div className="pfas-filePill" title={signatureFile.name}>
+                <span className="pfas-fileName">{signatureFile.name}</span>
+                <span className="pfas-fileSize">({formatMB(signatureFile.size)})</span>
+              </div>
+            ) : null}
+
+            <input
+              ref={signatureUploadRef}
+              className="pfas-hiddenInput"
+              type="file"
+              accept="image/png,image/jpeg,image/jpg,image/webp"
+              onChange={(e) => validateSignatureFile(e.target.files?.[0] || null)}
+            />
+          </div>
+
+          <div className="pfas-signatureActions">
+            <button type="button" className="pfas-btn" onClick={onClear}>
+              Clear Uploaded Signature
+            </button>
+          </div>
+        </div>
+      ) : null}
+
+      {signatureImage ? (
+        <div className="pfas-signaturePreviewWrap">
+          <div className="pfas-hint">Signature attached successfully.</div>
+          <img src={signatureImage} alt="Attached signature preview" className="pfas-signaturePreview" />
+        </div>
+      ) : null}
+    </section>
+  );
+}
 
 const initialForm = {
   client: {
@@ -393,6 +552,9 @@ const initialForm = {
     streetAddress: "",
     cityStateZip: "",
     signatureName: "",
+    signatureImage: "",
+    signatureFile: null,
+    signatureMode: "",
   },
   parties: {
     mainContact1: { ...EMPTY_PARTY },
@@ -415,16 +577,14 @@ const initialForm = {
 
 export default function Pfasform() {
   const formRef = useRef(null);
+  const signatureRef = useRef(null);
+
   const [confirmed, setConfirmed] = useState(false);
-
-
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
   const [globalNote, setGlobalNote] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-
-  
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
 
@@ -443,7 +603,6 @@ export default function Pfasform() {
   const refreshPage = () => {
     window.location.reload();
   };
-
 
   const setClient = (key, value) =>
     setForm((prev) => ({ ...prev, client: { ...prev.client, [key]: value } }));
@@ -473,6 +632,139 @@ export default function Pfasform() {
       delete next[key];
       return next;
     });
+
+  const getSignatureDataUrl = () => {
+    if (!signatureRef.current || signatureRef.current.isEmpty()) return "";
+
+    return signatureRef.current.getCanvas().toDataURL("image/png");
+  };
+
+  const saveSignature = () => {
+    const signatureImage = getSignatureDataUrl();
+
+    if (!signatureImage) {
+      setError("signatureImage", "Please draw your signature first.");
+      toastError("Please draw your signature first.");
+      return;
+    }
+
+    setForm((prev) => ({
+      ...prev,
+      client: {
+        ...prev.client,
+        signatureImage,
+        signatureFile: null,
+        signatureMode: "draw",
+      },
+    }));
+
+    clearError("signatureImage");
+
+    toast.success("Signature attached!", {
+      position: "top-right",
+      autoClose: 1800,
+    });
+  };
+
+  const uploadSignature = (file) => {
+    if (!file) return;
+
+    const img = new Image();
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+
+        const maxWidth = 700;
+        const maxHeight = 220;
+
+        let width = img.width;
+        let height = img.height;
+
+        const ratio = Math.min(maxWidth / width, maxHeight / height, 1);
+        width = Math.round(width * ratio);
+        height = Math.round(height * ratio);
+
+        canvas.width = maxWidth;
+        canvas.height = maxHeight;
+
+        const ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        const x = Math.round((maxWidth - width) / 2);
+        const y = Math.round((maxHeight - height) / 2);
+
+        ctx.drawImage(img, x, y, width, height);
+
+        const signatureImage = canvas.toDataURL("image/jpeg", 0.75);
+
+        signatureRef.current?.clear();
+
+        setForm((prev) => ({
+          ...prev,
+          client: {
+            ...prev.client,
+            signatureImage,
+            signatureFile: file,
+            signatureMode: "upload",
+          },
+        }));
+
+        clearError("signatureImage");
+
+        toast.success("Electronic signature uploaded!", {
+          position: "top-right",
+          autoClose: 1800,
+        });
+      };
+
+      img.onerror = () => {
+        toastError("Could not load the signature image. Please try another file.");
+      };
+
+      img.src = String(reader.result || "");
+    };
+
+    reader.onerror = () => {
+      toastError("Could not read the signature file. Please try another image.");
+    };
+
+    reader.readAsDataURL(file);
+  };
+
+  const clearSignature = () => {
+    signatureRef.current?.clear();
+
+    setForm((prev) => ({
+      ...prev,
+      client: {
+        ...prev.client,
+        signatureImage: "",
+        signatureFile: null,
+      },
+    }));
+
+    clearError("signatureImage");
+  };
+
+  const setSignatureMode = (mode) => {
+    signatureRef.current?.clear();
+
+    setForm((prev) => ({
+      ...prev,
+      client: {
+        ...prev.client,
+        signatureMode: mode,
+        signatureImage: "",
+        signatureFile: null,
+      },
+    }));
+
+    clearError("signatureImage");
+  };
 
   const onEmailBlur = (key, label, value) => () => {
     const v = (value || "").trim();
@@ -579,6 +871,22 @@ export default function Pfasform() {
       ok = false;
     }
 
+    const hasSavedSignature = !!form.client.signatureImage;
+    const hasCanvasSignature =
+      form.client.signatureMode === "draw" &&
+      signatureRef.current &&
+      !signatureRef.current.isEmpty();
+
+    if (!form.client.signatureMode) {
+      setError("signatureImage", "Please select a signature option.");
+      setGlobalNote("Please select a signature option before submitting.");
+      ok = false;
+    } else if (!hasSavedSignature && !hasCanvasSignature) {
+      setError("signatureImage", "Signature is required.");
+      setGlobalNote("Please attach your signature before submitting.");
+      ok = false;
+    }
+
     return ok;
   };
 
@@ -609,9 +917,16 @@ export default function Pfasform() {
       return;
     }
 
+    const signatureImageForEmail =
+      form.client.signatureImage ||
+      (form.client.signatureMode === "draw" ? getSignatureDataUrl() : "");
 
     const payload = {
       ...form,
+      client: {
+        ...form.client,
+        signatureImage: signatureImageForEmail,
+      },
       testing: {
         hasTesting: form.testing.hasTesting,
         testingExplain:
@@ -631,25 +946,22 @@ export default function Pfasform() {
 
       scrollToTop();
 
-      // optional: clear form state before reload (nice UX)
       setForm(initialForm);
       setConfirmed(false);
       setErrors({});
+      signatureRef.current?.clear();
 
-      // refresh after user sees success
       setTimeout(() => {
         refreshPage();
       }, 2800);
-
     } catch (err) {
       console.error("EmailJS error:", err);
       toastError(
         "Email failed to send. Check EmailJS IDs, template variables, and attachment limits."
       );
-    }finally {
+    } finally {
       setIsSubmitting(false);
     }
-
   };
 
   return (
@@ -657,7 +969,6 @@ export default function Pfasform() {
       <ToastContainer />
 
       <form ref={formRef} className="pfas-card" onSubmit={onSubmit} noValidate>
-        {/* Hidden inputs for your EmailJS template variables */}
         {EMAILJS_FIELD_NAMES.map((name) => (
           <input key={name} type="hidden" name={name} defaultValue="" />
         ))}
@@ -676,8 +987,6 @@ export default function Pfasform() {
           </div>
         </header>
 
-
-        {/* CLIENT SECTION */}
         <section className="pfas-section">
           <h1 className="pfas-h1">CLIENT SECTION</h1>
 
@@ -743,11 +1052,9 @@ export default function Pfasform() {
                 placeholder="City, State, Zip"
               />
             </Field>
-
           </div>
         </section>
 
-        {/* INFORMATION DETAILS */}
         <section className="pfas-section">
           <h1 className="pfas-h1">INFORMATION DETAILS</h1>
 
@@ -814,7 +1121,6 @@ export default function Pfasform() {
           />
         </section>
 
-        {/* TESTING */}
         <section className="pfas-section">
           <h1 className="pfas-h1">PFAS / CONTAMINANTS TESTING</h1>
 
@@ -856,7 +1162,6 @@ export default function Pfasform() {
           ) : null}
         </section>
 
-        {/* SYSTEM DETAILS */}
         <section className="pfas-section">
           <h1 className="pfas-h1">SYSTEM DETAILS</h1>
 
@@ -915,8 +1220,6 @@ export default function Pfasform() {
           </div>
 
           <div className="pfas-subsection">
-            
-
             <Dropzone
               file={form.system.supportingDoc}
               onPickFile={(file) => {
@@ -926,6 +1229,18 @@ export default function Pfasform() {
             />
           </div>
         </section>
+
+        <SignaturePanel
+          sigRef={signatureRef}
+          signatureMode={form.client.signatureMode}
+          setSignatureMode={setSignatureMode}
+          signatureImage={form.client.signatureImage}
+          signatureFile={form.client.signatureFile}
+          onSave={saveSignature}
+          onClear={clearSignature}
+          onUploadSignature={uploadSignature}
+          error={errors.signatureImage}
+        />
 
         {globalNote ? <div className="pfas-globalNote">{globalNote}</div> : null}
 
@@ -958,7 +1273,8 @@ export default function Pfasform() {
             )}
           </button>
         </footer>
-            <h3>REF: AL-009</h3>
+
+        <h3>REF: AL-009</h3>
         <input type="hidden" name="PFAS_Code" value="REFAL009" />
       </form>
     </div>

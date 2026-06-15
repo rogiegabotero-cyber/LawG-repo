@@ -13,6 +13,32 @@
   gap: 12px;
 }
 
+.pfas-signatureBox {
+  border: 1px dashed #aaa;
+  border-radius: 8px;
+  background: #fff;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.pfas-signatureCanvas {
+  width: 100%;
+  max-width: 700px;
+  height: 220px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.pfas-signatureActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
 .pfas-backIcon{
   display: inline-flex;
   align-items: center;
@@ -110,6 +136,59 @@
   color: #777;
   font-weight: 600;
   margin-left: 6px;
+}
+
+.pfas-signatureDropdown {
+  margin-top: 14px;
+}
+
+.pfas-signatureBox {
+  border: 1px dashed #aaa;
+  border-radius: 8px;
+  background: #fff;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.pfas-signatureCanvas {
+  width: 100%;
+  max-width: 700px;
+  height: 220px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.pfas-signatureActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.pfas-signatureUploadBox {
+  border: 1px dashed #aaa;
+  border-radius: 8px;
+  background: #fff;
+  padding: 18px;
+  cursor: pointer;
+}
+
+.pfas-signaturePreviewWrap {
+  margin-top: 14px;
+}
+
+.pfas-signaturePreview {
+  display: block;
+  max-width: 420px;
+  max-height: 180px;
+  margin-top: 8px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
 }
 
 /* OPTIONAL: you referenced pfas-hint and pfas-italic in JSX;
